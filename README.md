@@ -1,4 +1,4 @@
 # midgard
 
 
-## cool stuff
+## cool animals and stuff
