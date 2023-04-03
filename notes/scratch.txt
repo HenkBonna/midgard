@@ -1,0 +1,212 @@
+## Notes, 03.04.23
+
+#### GAMEPLAY NOTES
+
+### PRESENTATION STUFFS
+    When the transition plays, the screen can be letterboxed, to make it seem more
+    cinematic
+    Font with a title card for each ANIMALS
+        Sorta like boss titles in Zelda
+        Individual title cards for each animal, 
+        in the style of the animal, or the vibe of the gampelay
+    All music is MIDI, and reacts to the game.
+
+- - - 
+
+- HUMAN
+    NOTES:
+    GAMEPLAY:  ## Not until the end.
+        Man in an office landscape
+    A PRESS:
+        Sort stuff
+    TRANSITION:
+        Sees a bird landing on a flagpost outside.
+
+- HAWK
+    NOTES:
+    GAMEPLAY:
+        Prompt: "Press A to Soar"
+        The feeling of freedom
+        Fly around buildings, flying thru rings, around stuffs.
+    A-press:
+        Dive, soar.
+    TRANSITION:
+        Swoop down to catch a loose rabbit, whose found its way to the city.
+        Misses, camera stays with rabbit.
+
+- RABBIT
+    NOTES:
+    GAMEPLAY:
+        Jumping over fences, hedges, &c. in suburbia
+    A Press:
+        Jump, pounce
+    TRANSITION:
+        TO DOG:
+        Hops over a fence, and lands directly on the head of a sleeping dog, 
+        sleeping with the head out of a dog-house. A moment pause. The rabbit flees, over an final 
+        fence, into a wooded field. The dog takes chase, snapping it's leash
+
+- DOG
+    NOTES:
+    GAMEPLAY:
+        "Slalom", between trees
+        Following the rabbit which you can only see the scent of, and you catch glimpses
+        Following a smell that, can smash into trees, wobble.
+        "Drifting" mechanic, where holding A charges a dash, that can be unleashed.
+            Same as Mario cart, with jumping to charge a dash.
+    A-Press:
+
+    TRANSITION:
+        TO ANTS
+        Ends with drifting around a big tree, and a bush, but then you slam into an
+        anthill.
+
+- ANT
+    NOTES:
+    GAMEPLAY:
+        Collecting stuff in the broken ant hill.
+        You get shortcuts if you have enough sticks.
+    A-PRESS: 
+        Pick up things
+    TRANSTION:
+        TO CRAB
+        Falls out of a hole, and finds themselves in the sand.
+        A one-clawed Crab is looking at it. The anthill is seen above a dune.
+        The ant goes back into a hole.
+
+- CRAB
+    NOTES:
+    GAMEPLAY:
+        Only one claw, always moved sideways
+        Snipping at a tiny fish that's bothering it.
+    A-PRESS: 
+        Snap with claw.
+    TRANSITION:
+        TO OCT
+        It follows the fish, suddenly approaching a steep drop-off, and doesn't immidietly
+        notice the giant fucking tentacle coming over the edge.
+            Transition into Giant Octopus
+
+- GIANT OCTOPUS
+    GAMEPLAY:
+        Fluid motion of the ocean
+        Bully, goal (and resulting speed-boost) is to break up steams of other fishes.
+        The more you bully, the quicker you go.
+    A-PRESS:
+        Propell forward, agressively. If you hit a steam, you get a boost, if not a penalty.
+    TRANSITION:
+        TO WHALE
+        Attacks a whale, and momentaneously mirrors the
+        famous diorahma.
+    Deep ocean.
+
+- WHALE
+    NOTES:
+    GAMEPLAY:
+        Deep deep ocean.
+        You follow the sounds of another whale, looking for the pack.
+        Echolocation based gameplay, moving either left, right.
+        Very calm, think FLOWER on PS3. 
+    A-PRESS:
+        Send out for an echo. Stops the whale in it's tracks.
+    TRANSITION:
+        TO SEAGULL
+        Celebratory when you find pack, goes up to blow water.
+        a Seagull is hit by the water, and you're blown up
+
+- SEAGULL 
+    NOTES:
+    GAMEPLAY:
+        Shoreline, open waters.
+        Timing based, maybe sort of a rythm game?
+        Following a boat that throws out food, timing based game, you compete with CPU gulls
+        Wind waker vibes.
+        The boat drives to shore.
+    A-PRESS:
+        Dive into the bucket of food.
+    TRANSITION:
+        The fisherman has settled at the dock, throws a final fish towards a building with
+        some trashcans outside.
+        The Gull swoops for the final one, but a fox, whose tail has been sticking up from the garbage
+        jumps in and takes it. The gull settles on something else, finding a pizza box or something.
+        Fox runs away with the fish.
+
+
+- FOX 
+    NOTES:
+    GAMEPLAY:  
+        PROMPT: "Press A to Sneak"
+        Running through a beautiful autumn wood, with a fish for her pups.
+        Can either follow a safe, easy path, or do a more dearing path
+        You have to sneak up a mountain, where hikers, kids, birds, and whatever is residing.
+    A-PRESS:
+        Holding A makes you sneak, which moves slower, but you can move behind people.
+        If you're busted, you're rustled onto a slower path.
+    TRANSITION:
+        The final sneak is past a big brown bear, sitting close to the pups.
+        The bear scratches itself when you cross.
+
+
+- BEAR
+    NOTES: 
+        Slow horns through, tuba.
+    GAMEPLAY:
+        PROMPT: "Press A to scratch"
+        Going around, looking for a good tree to scratch on.
+        If you scratch on a tree that looks nice, you take a shortcut.
+        Has to be obvious to player which tree is good, and there must be fewer of these.
+        Perhaps they have bark worn off from previous scratching bears.
+    A-PRESS:
+        Scratches back on tree.
+        
+    TRANSITION:
+        TO CAT: 
+        Finds the perfect tree
+        Rubs against the tree, scratching vigorously. The lethargic horns are replaced wiht
+        extatic, celebratory horns with drums. 
+        As he concludes theitch, the camera pans slowly to an
+        onlooking cat, sitting on the fence, next to a highway. 
+        The bear notices. And slowly walks away.
+
+- CAT
+    NOTES:
+    GAMEPLAY:
+        PROMPT: "Press A to Climb"
+        Parkour, pouncing up an allyways.
+        Like mirrors edge
+    A-PRESS: 
+        a Pounce, or big jump. Shorter jumps are automatic.
+    TRANSITION TO SPIDER:
+        Pounces on a hanging spider. The spider zips upwards, so the cat misses
+
+- SPIDER.
+    NOTES:
+    GAMEPLAY:
+        The inital thread is static, but you can pendulate back and forth to get more points.
+        Maybe use anohter thread somehow, for certain things.
+    A PRESS:
+        Shoots a web, that can attach and give boost if you have been pendulating correctly.
+    TRANSITION:
+        TO HUMAN AGAIN:
+        Some other human (not player) tries to swat the spider, but misses. Spider falls of the edge,
+        and hangs from the cobweb again. The player sees the swatting, and is saddend, and goes to 
+        grab a cup of coffee.
+
+- - - 
+
+
+## We could have other cycles in the future, DLC.
+# All DLC cycles must include aliens.
+
+- Ant
+- Fox
+- Bear
+- Rat
+- Kamel
+
+    // The Arctic Cycle
+
+- Sel
+- Isbjørn
+- Alien 
+- Ku
