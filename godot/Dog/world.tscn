@@ -1,0 +1,1635 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlj1syq1e5xqj"]
+
+[ext_resource type="PackedScene" uid="uid://504nurlgso5p" path="res://player.tscn" id="1_vp3ro"]
+[ext_resource type="PackedScene" uid="uid://dybpuxfg1m34c" path="res://tree.tscn" id="2_18coa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_53q2k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yr3k4"]
+size = Vector3(120, 1, 120)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30j6h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebcof"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ann6h"]
+material = SubResource("StandardMaterial3D_ebcof")
+
+[node name="Node" type="Node"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_53q2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_yr3k4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(120, 0, 0, 0, 1, 0, 0, 0, 120, 0, 0, 0)
+mesh = SubResource("BoxMesh_30j6h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.734773, 0.678314, 0, -0.0952705, 0.1032, 0.990088, 0.67159, -0.727489, 0.140452, 0, 52.716, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_vp3ro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27621, 0)
+
+[node name="WoddDraw" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7481, 1.19278, 58.7364)
+lod_bias = 0.001
+mesh = SubResource("BoxMesh_ann6h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5228, 1.00524, -59.4552)
+lod_bias = 0.001
+mesh = SubResource("BoxMesh_ann6h")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3155, 0.913322, 58.6355)
+lod_bias = 0.001
+mesh = SubResource("BoxMesh_ann6h")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5408, 0.72578, -59.5561)
+lod_bias = 0.001
+mesh = SubResource("BoxMesh_ann6h")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="WoodLarge" type="Node3D" parent="WoddDraw"]
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge2" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1704, 0, 2.67974)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge2"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge2/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge2/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge2/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge2/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge2/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge3" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.6723)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge3"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge3/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge3/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge3/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge3/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge3/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge4" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5532, 0, 12.2502)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge4"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge4/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge4/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge4/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge4/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge4/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge5" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.4711)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge5"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge5/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge5/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge5/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge5/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge5/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge6" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5715, 0, -11.3372)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge6"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge6/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge6/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge6/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge6/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge6/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge7" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5715, 0, -19.1315)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge7"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge7/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge7/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge7/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge7/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge7/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="WoodLarge8" type="Node3D" parent="WoddDraw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6344, 0, 28.1658)
+
+[node name="Woods1" type="Node3D" parent="WoddDraw/WoodLarge8"]
+
+[node name="Tree" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge8/Woods1" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods2" type="Node3D" parent="WoddDraw/WoodLarge8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450012, 0, 5.06371)
+
+[node name="Tree" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge8/Woods2" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods3" type="Node3D" parent="WoddDraw/WoodLarge8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9404, 0, 0)
+
+[node name="Tree" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge8/Woods3" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods4" type="Node3D" parent="WoddDraw/WoodLarge8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1122)
+
+[node name="Tree" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge8/Woods4" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)
+
+[node name="Woods5" type="Node3D" parent="WoddDraw/WoodLarge8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0849, 0, 9.16676)
+
+[node name="Tree" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Tree2" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -2)
+
+[node name="Tree3" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -2)
+
+[node name="Tree4" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+
+[node name="Tree5" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[node name="Tree6" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+
+[node name="Tree7" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 4)
+
+[node name="Tree8" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+
+[node name="Tree9" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00354, 0.5, -2.47143)
+
+[node name="Tree10" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54021, 0.5, -0.595098)
+
+[node name="Tree11" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83071, 0.5, -6.35981)
+
+[node name="Tree12" parent="WoddDraw/WoodLarge8/Woods5" instance=ExtResource("2_18coa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67017, 0.5, 1.67867)

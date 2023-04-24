@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4dmkviq4s1eh"
+path="res://.godot/imported/MapleTreeLeaves.obj-486898ac7b9a10ce41ec066663ef3fc8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MapleTreeLeaves.obj-486898ac7b9a10ce41ec066663ef3fc8.mesh"]
+
+source_file="res://wolf_with_animations/47-mapletree/MapleTreeLeaves.obj"
+dest_files=["res://.godot/imported/MapleTreeLeaves.obj-486898ac7b9a10ce41ec066663ef3fc8.mesh", "res://.godot/imported/MapleTreeLeaves.obj-486898ac7b9a10ce41ec066663ef3fc8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
