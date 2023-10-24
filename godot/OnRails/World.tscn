@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://cndrqh7aujbva"]
+
+[ext_resource type="Script" path="res://playerFollow.gd" id="1_80g84"]
+[ext_resource type="PackedScene" uid="uid://5qfbgmah1aui" path="res://player.tscn" id="1_1420d"]
+[ext_resource type="Script" path="res://PathFollow3D2.gd" id="3_odqqi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vo8pd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aggtc"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tms7i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hox4"]
+size = Vector3(1, 4, 5)
+
+[sub_resource type="Curve3D" id="Curve3D_nkddi"]
+_data = {
+"points": PackedVector3Array(0.850853, 0, -2.34282, -0.850853, 0, 2.34282, 1.61218, 4.88758e-06, 5.2227, 1.39175, 0, -0.185523, -1.39175, 0, 0.185523, -4.34808, 4.88758e-06, 8.90496, 0.273319, 0, 1.16578, -0.273319, 0, -1.16578, -7.68708, 4.88758e-06, 7.87518, 0, 0, 0, 0, 0, 0, -6.71971, 4.88758e-06, 5.53476, -0.316078, 0, 1.28294, 0.316078, 0, -1.28294, -4.12964, 4.88758e-06, 2.50782, 0.763912, 0, 0.837612, -0.763912, 0, -0.837612, -3.88, 4.88758e-06, -2.57869, 0.779192, 0, 0.0731001, -0.779192, 0, -0.0731001, -5.28425, 4.88758e-06, -3.23401, 0.342066, 0, -0.821076, -0.342066, 0, 0.821076, -6.81332, 4.88758e-06, -2.45387, -0.323488, 0, -0.403873, 0.323488, 0, 0.403873, -6.75091, 4.88758e-06, 2.91349, -1.36426, 0, 0.0825224, 1.36426, 0, -0.0825224, -4.82856, 0.0106961, 4.10902, -0.347212, 0, 0.653948, 0.347212, 0, -0.653948, 4.32681, 4.88758e-06, -1.08804, 0.307781, 0, 0.666586, -0.307781, 0, -0.666586, 5.08714, 0.00152588, -3.30596, 0.876472, -0.0245514, -0.0188785, -0.876472, 0.0245514, 0.0188785, 0.845515, 4.88758e-06, -6.35244, 0.182214, -0.205141, -1.35352, -0.182214, 0.205141, 1.35352, -1.06495, 4.88758e-06, -5.37598, -0.0598741, -0.0189727, -0.138072, 0.0598741, 0.0189727, 0.138072, 0.548331, 4.88758e-06, -1.00313, 0, 0, 0, 0, 0, 0, 1.61218, 4.88758e-06, 5.2227),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h0r7"]
+albedo_color = Color(0.141176, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yuw4b"]
+material = SubResource("StandardMaterial3D_2h0r7")
+size = Vector3(0.5, 0.7, 0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1.43079, 0, 0, 0, 1, 0, 0, 0, 1.67119, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("BoxMesh_vo8pd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_aggtc")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02353, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_tms7i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_8hox4")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(0.652535, 0, 0.757759, 0, 1, 0, -0.757759, 0, 0.652535, 7.41787, 2.2833, -3.53522)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_tms7i")
+skeleton = NodePath("../../StaticBody3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D2"]
+shape = SubResource("BoxShape3D_8hox4")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-0.478799, 0, 0.877925, 0, 1, 0, -0.877925, 0, -0.478799, 1.51492, 2.2833, 5.88893)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_tms7i")
+skeleton = NodePath("../../StaticBody3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
+shape = SubResource("BoxShape3D_8hox4")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.297, 0.5, 0.008)
+curve = SubResource("Curve3D_nkddi")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.939924, 0, 0.341357, 0, 0.999996, 0, -0.341357, 0, -0.939924, 1.61218, 4.88758e-06, 5.2227)
+script = ExtResource("1_80g84")
+
+[node name="Player" parent="Path3D/PathFollow3D" instance=ExtResource("1_1420d")]
+transform = Transform3D(0.048577, 0, 0.998822, 0, 1, 0, -0.998822, 0, 0.048577, 0, 0.222023, 0)
+
+[node name="RabbitPath" type="PathFollow3D" parent="Path3D" node_paths=PackedStringArray("point")]
+transform = Transform3D(-0.440858, 0, 0.897577, 0, 1, 0, -0.897577, 0, -0.440858, -1.22817, 4.88758e-06, 7.90405)
+progress = 4.0
+script = ExtResource("3_odqqi")
+point = NodePath("Point")
+
+[node name="Point" type="Node3D" parent="Path3D/RabbitPath"]
+transform = Transform3D(0.350202, 0, -0.936665, 0, 0.999996, 0, 0.936665, 0, 0.350202, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/RabbitPath/Point"]
+transform = Transform3D(0.963439, 0, -0.267928, 0, 1, 0, 0.267928, 0, 0.963439, 0, 0.324589, 0)
+mesh = SubResource("BoxMesh_yuw4b")
+
+[node name="TurnLooker" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.656185, 0, 0.7546, 0, 1, 0, -0.7546, 0, -0.656185, 0.44761, 4.88758e-06, 6.82227)
+progress = 2.0
+
+[node name="TurnPoint" type="Node3D" parent="Path3D/TurnLooker"]
+transform = Transform3D(0.999991, 0, -2.98023e-08, 0, 0.999996, 0, 2.98023e-08, 0, 0.999991, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0389285, 0.696412, -0.716586, 0.999242, 0.0271308, -0.0279167, 0, -0.71713, -0.69694, -34.8549, 28.9344, -11.6161)
