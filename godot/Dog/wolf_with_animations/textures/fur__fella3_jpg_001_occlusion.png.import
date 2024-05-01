@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://twrtngkre1rx"
-path.s3tc="res://.godot/imported/fur__fella3_jpg_001_occlusion.png-70a939e517a10f642698e392bcb9510f.s3tc.ctex"
+path.etc2="res://.godot/imported/fur__fella3_jpg_001_occlusion.png-70a939e517a10f642698e392bcb9510f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://wolf_with_animations/textures/fur__fella3_jpg_001_occlusion.png"
-dest_files=["res://.godot/imported/fur__fella3_jpg_001_occlusion.png-70a939e517a10f642698e392bcb9510f.s3tc.ctex"]
+dest_files=["res://.godot/imported/fur__fella3_jpg_001_occlusion.png-70a939e517a10f642698e392bcb9510f.etc2.ctex"]
 
 [params]
 

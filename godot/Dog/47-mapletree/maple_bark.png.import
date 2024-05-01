@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ler5bxys3fe"
-path.s3tc="res://.godot/imported/maple_bark.png-94e459c399ab68f2bcde1184faa3bc66.s3tc.ctex"
+path.etc2="res://.godot/imported/maple_bark.png-94e459c399ab68f2bcde1184faa3bc66.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://47-mapletree/maple_bark.png"
-dest_files=["res://.godot/imported/maple_bark.png-94e459c399ab68f2bcde1184faa3bc66.s3tc.ctex"]
+dest_files=["res://.godot/imported/maple_bark.png-94e459c399ab68f2bcde1184faa3bc66.etc2.ctex"]
 
 [params]
 
