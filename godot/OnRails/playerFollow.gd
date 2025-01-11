@@ -65,4 +65,3 @@ func _process(delta):
 		Turning = false
 		Speed += MovementBurst
 		MovementBurst = 0
-
