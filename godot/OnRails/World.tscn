@@ -3,23 +3,21 @@
 [ext_resource type="Script" path="res://playerFollow.gd" id="1_80g84"]
 [ext_resource type="PackedScene" uid="uid://5qfbgmah1aui" path="res://player.tscn" id="1_1420d"]
 [ext_resource type="Script" path="res://PathFollow3D2.gd" id="3_odqqi"]
+[ext_resource type="PackedScene" uid="uid://bjdl0f8w7j7cw" path="res://OakTree.tscn" id="4_ltlrc"]
+[ext_resource type="PackedScene" uid="uid://dx0patbsdl8y8" path="res://pine_tree1.tscn" id="5_px134"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vo8pd"]
+size = Vector3(20, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aggtc"]
-size = Vector3(30, 1, 30)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tms7i"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8hox4"]
-size = Vector3(1, 4, 5)
+size = Vector3(600, 1, 120)
 
 [sub_resource type="Curve3D" id="Curve3D_nkddi"]
 _data = {
-"points": PackedVector3Array(0.850853, 0, -2.34282, -0.850853, 0, 2.34282, 1.61218, 4.88758e-06, 5.2227, 1.39175, 0, -0.185523, -1.39175, 0, 0.185523, -4.34808, 4.88758e-06, 8.90496, 0.273319, 0, 1.16578, -0.273319, 0, -1.16578, -7.68708, 4.88758e-06, 7.87518, 0, 0, 0, 0, 0, 0, -6.71971, 4.88758e-06, 5.53476, -0.316078, 0, 1.28294, 0.316078, 0, -1.28294, -4.12964, 4.88758e-06, 2.50782, 0.763912, 0, 0.837612, -0.763912, 0, -0.837612, -3.88, 4.88758e-06, -2.57869, 0.779192, 0, 0.0731001, -0.779192, 0, -0.0731001, -5.28425, 4.88758e-06, -3.23401, 0.342066, 0, -0.821076, -0.342066, 0, 0.821076, -6.81332, 4.88758e-06, -2.45387, -0.323488, 0, -0.403873, 0.323488, 0, 0.403873, -6.75091, 4.88758e-06, 2.91349, -1.36426, 0, 0.0825224, 1.36426, 0, -0.0825224, -4.82856, 0.0106961, 4.10902, -0.347212, 0, 0.653948, 0.347212, 0, -0.653948, 4.32681, 4.88758e-06, -1.08804, 0.307781, 0, 0.666586, -0.307781, 0, -0.666586, 5.08714, 0.00152588, -3.30596, 0.876472, -0.0245514, -0.0188785, -0.876472, 0.0245514, 0.0188785, 0.845515, 4.88758e-06, -6.35244, 0.182214, -0.205141, -1.35352, -0.182214, 0.205141, 1.35352, -1.06495, 4.88758e-06, -5.37598, -0.0598741, -0.0189727, -0.138072, 0.0598741, 0.0189727, 0.138072, 0.548331, 4.88758e-06, -1.00313, 0, 0, 0, 0, 0, 0, 1.61218, 4.88758e-06, 5.2227),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.53665, 0, 5.64071, 2, -0.011, -2.07, -2, 0.011, 2.07, -5.52134, 0, 19.4521, 0, 0, 0, 0, 0, 0, -8.97061, 0, 24.1122, 1.09083, -0.01507, -2.12633, -1.09083, 0.01507, 2.12633, -19.2505, 0, 34.4884, -0.345345, 0, -1.89296, 0.345345, 0, 1.89296, -24.7859, 0, 51.286, 0.5, 0, -2, -0.435, 0, 5, -24.213, 0, 69.398, 1, 0, -1, 0.5, 0.018, 1, -20.821, 0, 89.407, 2.15393, 0, -0.813858, -2.15393, 0, 0.813858, -32.6236, 0, 101.605, 1.60689, 0, -0.311691, -1.60689, 0, 0.311691, -50.8479, 0, 110.234, 0.242012, 0, -2.48373, -0.242012, 0, 2.48373, -66.8952, 0, 116.573, -0.0914993, 0, -2.92686, 0.0914993, 0, 2.92686, -60.6798, 0, 131.145, -0.533226, 0, -2.47421, 0.533226, 0, 2.47421, -55.2579, 0, 144.498, 0.450203, 0, -2.42368, -0.450203, 0, 2.42368, -48.8953, 0, 156.987, 2.20941, 0, -1.11662, -2.20941, 0, 1.11662, -53.6122, 0, 171.438, 1.84563, 0, -1.84261, -1.84563, 0, 1.84261, -62.3803, 0, 171.639, -0.610359, 0, -3.31688, 0.610359, 0, 3.31688, -69.3931, 0, 182.796, -2.27016, 0, -1.65794, 2.27016, 0, 1.65794, -63.2652, 0, 192.975, -2.38547, 0, -1.78053, 2.38547, 0, 1.78053, -55.482, 0, 196.419, 0.704086, 0, -2.39665, -0.704086, 0, 2.39665, -52.637, 0, 201.962, 2.03243, 0, -2.39604, -2.03243, 0, 2.39604, -55.7735, 0, 212.409, 2.10556, 0, -1.18016, -2.10556, 0, 1.18016, -67.7075, 0, 223.279, 2.80049, 0, -3.53123, -2.80049, 0, 3.53123, -78.877, 0, 227.72, 1, 0, -3, -2, 0, 4, -84.095, 0, 240.311, -1.77129, 0, -2.96385, 1.77129, 0, 2.96385, -86, 0, 253.198, -2, 0, -1, 2, 0, 1, -76.952, 0, 261.733, -1.26428, 0, -2.26907, 1.26428, 0, 2.26907, -70.7102, 0, 266.343, 2.07177, 0, -2.97922, -2.07177, 0, 2.97922, -70, 0, 283, 2.12688, 0, -1.96432, -2.12688, 0, 1.96432, -86.437, 0, 296.268, 1.951, 0, -1.945, -1.951, 0, 1.945, -86, 0, 319, 0.506699, 0, -2.33203, -0.506699, 0, 2.33203, -99.025, 0, 318.075, 2.55037, 0, -2.32574, -2.55037, 0, 2.32574, -101.638, 0, 334.359, 4.84706, 0, -2.02042, -4.84706, 0, 2.02042, -122.513, 0, 337.396, 3.11893, 0, -2.98209, -3.11893, 0, 2.98209, -147.586, 0, 345.163, 0.569351, 0, -4.98465, -0.569351, 0, 4.98465, -161.62, 0, 365.265, -0.747879, -3.62396e-05, -3.40872, 0.747879, 3.62396e-05, 3.40872, -170.269, 0, 393.09, -1.40207, 2.02656e-05, -3.94315, 1.40207, -2.02656e-05, 3.94315, -158.5, 0.00209546, 408.94, 1.80132, 0, -3.05789, -1.80132, 0, 3.05789, -158.886, 0, 414.028, 0, 0, 0, 0, 0, 0, -175.668, 0, 446.784),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 16
+point_count = 38
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h0r7"]
 albedo_color = Color(0.141176, 1, 0, 1)
@@ -31,63 +29,27 @@ size = Vector3(0.5, 0.7, 0.5)
 [node name="Node3D" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1.43079, 0, 0, 0, 1, 0, 0, 0, 1.67119, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 226.985, 0, 0)
 mesh = SubResource("BoxMesh_vo8pd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225.127, 0, 0)
 shape = SubResource("BoxShape3D_aggtc")
 
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02353, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("BoxMesh_tms7i")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_8hox4")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(0.652535, 0, 0.757759, 0, 1, 0, -0.757759, 0, 0.652535, 7.41787, 2.2833, -3.53522)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("BoxMesh_tms7i")
-skeleton = NodePath("../../StaticBody3D2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D2"]
-shape = SubResource("BoxShape3D_8hox4")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(-0.478799, 0, 0.877925, 0, 1, 0, -0.877925, 0, -0.478799, 1.51492, 2.2833, 5.88893)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("BoxMesh_tms7i")
-skeleton = NodePath("../../StaticBody3D2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
-shape = SubResource("BoxShape3D_8hox4")
-
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.297, 0.5, 0.008)
+transform = Transform3D(-0.393172, 0, 0.919465, 0, 1, 0, -0.919465, 0, -0.393172, -43.3925, 0.5, 0.008)
 curve = SubResource("Curve3D_nkddi")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.939924, 0, 0.341357, 0, 0.999996, 0, -0.341357, 0, -0.939924, 1.61218, 4.88758e-06, 5.2227)
+transform = Transform3D(-0.890457, 0, 0.455047, 0, 0.999996, 0, -0.455047, 0, -0.890457, 1.53665, 0, 5.64071)
 script = ExtResource("1_80g84")
 
-[node name="Player" parent="Path3D/PathFollow3D" instance=ExtResource("1_1420d")]
-transform = Transform3D(0.048577, 0, 0.998822, 0, 1, 0, -0.998822, 0, 0.048577, 0, 0.222023, 0)
-
 [node name="RabbitPath" type="PathFollow3D" parent="Path3D" node_paths=PackedStringArray("point")]
-transform = Transform3D(-0.440858, 0, 0.897577, 0, 1, 0, -0.897577, 0, -0.440858, -1.22817, 4.88758e-06, 7.90405)
+transform = Transform3D(-0.909656, -0.000251606, 0.415364, -1.27397e-05, 0.999999, 0.000577849, -0.415364, 0.000520352, -0.909655, -0.0911809, -0.00279303, 9.29426)
 progress = 4.0
+loop = false
 script = ExtResource("3_odqqi")
 point = NodePath("Point")
 
@@ -99,11 +61,2548 @@ transform = Transform3D(0.963439, 0, -0.267928, 0, 1, 0, 0.267928, 0, 0.963439, 
 mesh = SubResource("BoxMesh_yuw4b")
 
 [node name="TurnLooker" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.656185, 0, 0.7546, 0, 1, 0, -0.7546, 0, -0.656185, 0.44761, 4.88758e-06, 6.82227)
+transform = Transform3D(-0.913333, -0.000299829, 0.407213, -1.84308e-05, 1, 0.000694955, -0.407213, 0.000627221, -0.913332, 0.731387, -0.00151911, 7.4711)
 progress = 2.0
+loop = false
 
 [node name="TurnPoint" type="Node3D" parent="Path3D/TurnLooker"]
 transform = Transform3D(0.999991, 0, -2.98023e-08, 0, 0.999996, 0, 2.98023e-08, 0, 0.999991, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0389285, 0.696412, -0.716586, 0.999242, 0.0271308, -0.0279167, 0, -0.71713, -0.69694, -34.8549, 28.9344, -11.6161)
+
+[node name="Woods" type="Node3D" parent="."]
+
+[node name="LargeSegment" type="Node3D" parent="Woods"]
+
+[node name="Segment" type="Node3D" parent="Woods/LargeSegment"]
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment/Segment"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment/Segment"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment2" type="Node3D" parent="Woods/LargeSegment"]
+transform = Transform3D(0.0407595, 0, -0.999169, 0, 1, 0, 0.999169, 0, 0.0407595, 0, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment/Segment2"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment/Segment2"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment3" type="Node3D" parent="Woods/LargeSegment"]
+transform = Transform3D(-0.999604, 0, 0.0281485, 0, 1, 0, -0.0281485, 0, -0.999604, 43.9008, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment/Segment3"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment/Segment3"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment4" type="Node3D" parent="Woods/LargeSegment"]
+transform = Transform3D(0.0531202, 0, -0.998588, 0, 1, 0, 0.998588, 0, 0.0531202, 36.7624, 0, -4.75441)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment/Segment4"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment/Segment4"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment5" type="Node3D" parent="Woods/LargeSegment"]
+transform = Transform3D(0.999999, 0, -0.00153597, 0, 1, 0, 0.00153597, 0, 0.999999, 36.7624, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment/Segment5"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment/Segment5"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment6" type="Node3D" parent="Woods/LargeSegment"]
+transform = Transform3D(-0.948859, 0, -0.315699, 0, 1, 0, 0.315699, 0, -0.948859, 2.694, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment/Segment6"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment/Segment6"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="LargeSegment2" type="Node3D" parent="Woods"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3544, 0, 0)
+
+[node name="Segment" type="Node3D" parent="Woods/LargeSegment2"]
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment2/Segment"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment2/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment2/Segment"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment2/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment2" type="Node3D" parent="Woods/LargeSegment2"]
+transform = Transform3D(0.0407595, 0, -0.999169, 0, 1, 0, 0.999169, 0, 0.0407595, 0, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment2/Segment2"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment2/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment2/Segment2"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment2/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment3" type="Node3D" parent="Woods/LargeSegment2"]
+transform = Transform3D(-0.999604, 0, 0.0281485, 0, 1, 0, -0.0281485, 0, -0.999604, 43.9008, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment2/Segment3"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment2/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment2/Segment3"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment2/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment4" type="Node3D" parent="Woods/LargeSegment2"]
+transform = Transform3D(0.0531202, 0, -0.998588, 0, 1, 0, 0.998588, 0, 0.0531202, 36.7624, 0, -4.75441)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment2/Segment4"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment2/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment2/Segment4"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment2/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment5" type="Node3D" parent="Woods/LargeSegment2"]
+transform = Transform3D(0.999999, 0, -0.00153597, 0, 1, 0, 0.00153597, 0, 0.999999, 36.7624, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment2/Segment5"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment2/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment2/Segment5"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment2/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment6" type="Node3D" parent="Woods/LargeSegment2"]
+transform = Transform3D(-0.948859, 0, -0.315699, 0, 1, 0, 0.315699, 0, -0.948859, 2.694, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment2/Segment6"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment2/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment2/Segment6"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment2/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="LargeSegment3" type="Node3D" parent="Woods"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.183, 0, 0)
+
+[node name="Segment" type="Node3D" parent="Woods/LargeSegment3"]
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment3/Segment"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment3/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment3/Segment"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment3/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment2" type="Node3D" parent="Woods/LargeSegment3"]
+transform = Transform3D(0.0407595, 0, -0.999169, 0, 1, 0, 0.999169, 0, 0.0407595, 0, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment3/Segment2"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment3/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment3/Segment2"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment3/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment3" type="Node3D" parent="Woods/LargeSegment3"]
+transform = Transform3D(-0.999604, 0, 0.0281485, 0, 1, 0, -0.0281485, 0, -0.999604, 43.9008, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment3/Segment3"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment3/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment3/Segment3"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment3/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment4" type="Node3D" parent="Woods/LargeSegment3"]
+transform = Transform3D(0.0531202, 0, -0.998588, 0, 1, 0, 0.998588, 0, 0.0531202, 36.7624, 0, -4.75441)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment3/Segment4"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment3/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment3/Segment4"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment3/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment5" type="Node3D" parent="Woods/LargeSegment3"]
+transform = Transform3D(0.999999, 0, -0.00153597, 0, 1, 0, 0.00153597, 0, 0.999999, 36.7624, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment3/Segment5"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment3/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment3/Segment5"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50636, 0.629206, -5.54823)
+
+[node name="pine_tree7" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8512, 0.623313, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 0.395334, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment3/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment6" type="Node3D" parent="Woods/LargeSegment3"]
+transform = Transform3D(-0.948859, 0, -0.315699, 0, 1, 0, 0.315699, 0, -0.948859, 2.694, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment3/Segment6"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment3/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment3/Segment6"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0745041, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.0745041, -14.1769, 0.445195, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 0.501293, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 0.618695, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment3/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727884, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727884, -12.2069, 0.567109, -6.21893)
+
+[node name="LargeSegment4" type="Node3D" parent="Woods"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 217.687, 0, 0)
+
+[node name="Segment" type="Node3D" parent="Woods/LargeSegment4"]
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment4/Segment"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment4/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment4/Segment"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment4/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment2" type="Node3D" parent="Woods/LargeSegment4"]
+transform = Transform3D(0.0407595, 0, -0.999169, 0, 1, 0, 0.999169, 0, 0.0407595, 0, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment4/Segment2"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment4/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment4/Segment2"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment4/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment3" type="Node3D" parent="Woods/LargeSegment4"]
+transform = Transform3D(-0.999604, 0, 0.0281485, 0, 1, 0, -0.0281485, 0, -0.999604, 43.9008, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment4/Segment3"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment4/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment4/Segment3"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment4/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment4" type="Node3D" parent="Woods/LargeSegment4"]
+transform = Transform3D(0.0531202, 0, -0.998588, 0, 1, 0, 0.998588, 0, 0.0531202, 36.7624, 0, -4.75441)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment4/Segment4"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment4/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment4/Segment4"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment4/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment5" type="Node3D" parent="Woods/LargeSegment4"]
+transform = Transform3D(0.999999, 0, -0.00153597, 0, 1, 0, 0.00153597, 0, 0.999999, 36.7624, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment4/Segment5"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment4/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment4/Segment5"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment4/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment6" type="Node3D" parent="Woods/LargeSegment4"]
+transform = Transform3D(-0.948859, 0, -0.315699, 0, 1, 0, 0.315699, 0, -0.948859, 2.694, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment4/Segment6"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment4/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment4/Segment6"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment4/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="LargeSegment5" type="Node3D" parent="Woods"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 286.639, 0, 0)
+
+[node name="Segment" type="Node3D" parent="Woods/LargeSegment5"]
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment5/Segment"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment5/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment5/Segment"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment5/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment2" type="Node3D" parent="Woods/LargeSegment5"]
+transform = Transform3D(0.0407595, 0, -0.999169, 0, 1, 0, 0.999169, 0, 0.0407595, 0, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment5/Segment2"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment5/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment5/Segment2"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment5/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment3" type="Node3D" parent="Woods/LargeSegment5"]
+transform = Transform3D(-0.999604, 0, 0.0281485, 0, 1, 0, -0.0281485, 0, -0.999604, 43.9008, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment5/Segment3"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment5/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment5/Segment3"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment5/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment4" type="Node3D" parent="Woods/LargeSegment5"]
+transform = Transform3D(0.0531202, 0, -0.998588, 0, 1, 0, 0.998588, 0, 0.0531202, 36.7624, 0, -4.75441)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment5/Segment4"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment5/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment5/Segment4"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment5/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment5" type="Node3D" parent="Woods/LargeSegment5"]
+transform = Transform3D(0.999999, 0, -0.00153597, 0, 1, 0, 0.00153597, 0, 0.999999, 36.7624, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment5/Segment5"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment5/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment5/Segment5"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment5/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment6" type="Node3D" parent="Woods/LargeSegment5"]
+transform = Transform3D(-0.948859, 0, -0.315699, 0, 1, 0, 0.315699, 0, -0.948859, 2.694, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment5/Segment6"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment5/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment5/Segment6"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment5/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="LargeSegment6" type="Node3D" parent="Woods"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 357.949, 0, 0)
+
+[node name="Segment" type="Node3D" parent="Woods/LargeSegment6"]
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment6/Segment"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment6/Segment/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment6/Segment"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment6/Segment/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment2" type="Node3D" parent="Woods/LargeSegment6"]
+transform = Transform3D(0.0407595, 0, -0.999169, 0, 1, 0, 0.999169, 0, 0.0407595, 0, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment6/Segment2"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment6/Segment2/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment6/Segment2"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment6/Segment2/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment3" type="Node3D" parent="Woods/LargeSegment6"]
+transform = Transform3D(-0.999604, 0, 0.0281485, 0, 1, 0, -0.0281485, 0, -0.999604, 43.9008, 0, 31.4812)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment6/Segment3"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment6/Segment3/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment6/Segment3"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment6/Segment3/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment4" type="Node3D" parent="Woods/LargeSegment6"]
+transform = Transform3D(0.0531202, 0, -0.998588, 0, 1, 0, 0.998588, 0, 0.0531202, 36.7624, 0, -4.75441)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment6/Segment4"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment6/Segment4/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment6/Segment4"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment6/Segment4/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment5" type="Node3D" parent="Woods/LargeSegment6"]
+transform = Transform3D(0.999999, 0, -0.00153597, 0, 1, 0, 0.00153597, 0, 0.999999, 36.7624, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment6/Segment5"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment6/Segment5/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment6/Segment5"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment6/Segment5/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Segment6" type="Node3D" parent="Woods/LargeSegment6"]
+transform = Transform3D(-0.948859, 0, -0.315699, 0, 1, 0, 0.315699, 0, -0.948859, 2.694, 0, -33.0581)
+
+[node name="OakTrees" type="Node3D" parent="Woods/LargeSegment6/Segment6"]
+
+[node name="leafy_factory" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.00192684, 0, -0.799998, 0, 0.8, 0, 0.799998, 0, -0.00192684, -10.0022, 0.5, -12.2735)
+
+[node name="leafy_factory2" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.636237, 0, 1.13367, 0, 1.3, 0, -1.13367, 0, -0.636237, 0.552411, 0.5, -10.7989)
+
+[node name="leafy_factory3" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.876238, 0.0584768, -0.817795, 0, 1.19694, 0.085588, 0.819883, -0.0624962, 0.874006, -8.21723, 0.5, -1.38695)
+
+[node name="leafy_factory4" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.620157, 0, -0.652231, 0, 0.9, 0, 0.652231, 0, 0.620157, 10.2416, 0, -5.49038)
+
+[node name="leafy_factory5" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.551251, 0, -0.579761, 0, 0.8, 0, 0.579761, 0, 0.551251, -0.211174, 0, 3.2731)
+
+[node name="leafy_factory6" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(0.533106, 0, -0.962184, 0, 1.1, 0, 0.962184, 0, 0.533106, -11.7198, 0, 12.2478)
+
+[node name="leafy_factory7" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-0.2271, 0, -0.662137, 0, 0.7, 0, 0.662137, 0, -0.2271, 12.7757, 0, 5.2792)
+
+[node name="leafy_factory8" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(-1.05716, 0, 0.303995, 0, 1.1, 0, -0.303995, 0, -1.05716, 2.32284, 0, 12.9868)
+
+[node name="leafy_factory9" parent="Woods/LargeSegment6/Segment6/OakTrees" instance=ExtResource("4_ltlrc")]
+transform = Transform3D(1.12697, 0, 0.648034, 0, 1.3, 0, -0.648034, 0, 1.12697, 14.9929, 0, 14.3594)
+
+[node name="PineTrees" type="Node3D" parent="Woods/LargeSegment6/Segment6"]
+
+[node name="pine_tree1" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.790837, 0, -0.902539, 0, 1.2, 0, 0.902539, 0, -0.790837, 7.72582, 0.778387, -7.10175)
+
+[node name="pine_tree2" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.433722, 0, -0.41459, 0, 0.6, 0, 0.41459, 0, 0.433722, -6.48411, 0.778387, 8.71045)
+
+[node name="pine_tree3" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.182368, 0, 0.778936, 0, 0.8, 0, -0.778936, 0, -0.182368, 7.1315, 0.778387, -0.712719)
+
+[node name="pine_tree4" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.945498, 0, 0.892208, 0, 1.3, 0, -0.892208, 0, -0.945498, 7.72582, 0.778387, -12.5758)
+
+[node name="pine_tree5" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-1.0745, 0, -0.897467, 0, 1.4, 0, 0.897467, 0, -1.0745, -11.9391, 0.778387, -9.31647)
+
+[node name="pine_tree6" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.850239, 0, 0.697922, 0, 1.1, 0, -0.697922, 0, -0.850239, -1.50645, 0.778387, -5.54822)
+
+[node name="pine_tree7" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.204838, 0, -0.563952, 0, 0.6, 0, 0.563952, 0, 0.204838, -6.48411, 0.778387, -8.68025)
+
+[node name="pine_tree8" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.352603, 0, 0.485459, 0, 0.6, 0, -0.485459, 0, 0.352603, 1.38395, 0.778387, -2.92136)
+
+[node name="pine_tree9" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.074504, 0, -0.352206, 0, 0.36, 0, 0.352206, 0, -0.074504, -14.1769, 1.24542, -3.75447)
+
+[node name="pine_tree10" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0638018, 0, -0.18955, 0, 0.2, 0, 0.18955, 0, 0.0638018, -13.8513, 1.24542, -1.961)
+
+[node name="pine_tree11" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(0.0639705, 0, 0.2931, 0, 0.3, 0, -0.2931, 0, 0.0639705, -12.5711, 1.24542, -3.75447)
+
+[node name="pine_tree12" parent="Woods/LargeSegment6/Segment6/PineTrees" instance=ExtResource("5_px134")]
+transform = Transform3D(-0.0727883, 0, -0.239169, 0, 0.25, 0, 0.239169, 0, -0.0727883, -12.2069, 1.24542, -6.21893)
+
+[node name="Player" parent="." instance=ExtResource("1_1420d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1155, 1.60965, -2.73058)
