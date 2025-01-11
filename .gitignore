@@ -7,3 +7,4 @@ Assets/img/titles.xcf
 *.DS_Store
 # Godot 4+ specific ignores
 .godot/
+.DS_Store
