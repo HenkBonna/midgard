@@ -5,3 +5,5 @@ Assets/img/titles.xcf
 Assets/img/titles.xcf
 # 
 *.DS_Store
+# Ignore local godot configuration
+/.godot
