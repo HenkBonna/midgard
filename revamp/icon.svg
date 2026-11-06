@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect fill="#007f00" height="124" id="svg_1" rx="14" stroke="#212532" stroke-width="4" width="124" x="2" y="2"/>
+  <g fill="#fff" id="svg_2" transform="matrix(1 0 0 1 0 0) translate(12.322 12.322) scale(0.101 0.101)">
+   <path d="m105,673l0,33q407,354 814,0l0,-33l-814,0z" fill="#7fff00" id="svg_3"/>
+   <path d="m105,673l152,14q12,1 15,14l4,67l132,10l8,-61q2,-11 15,-15l162,0q13,4 15,15l8,61l132,-10l4,-67q3,-13 15,-14l152,-14l0,-246q30,-39 56,-81q-35,-59 -83,-108q-43,20 -82,47q-40,-37 -88,-64q7,-51 8,-102q-59,-28 -123,-42q-26,43 -46,89q-49,-7 -98,0q-20,-46 -46,-89q-64,14 -123,42q1,51 8,102q-48,27 -88,64q-39,-27 -82,-47q-48,49 -83,108q26,42 56,81l0,246zm0,33l0,39c0,276 813,276 814,0l0,-39l-134,12l-5,69q-2,10 -14,13l-162,11q-12,0 -16,-11l-10,-65l-132,0l-10,65q-4,11 -16,11l-162,-11q-12,-3 -14,-13l-5,-69l-134,-12z" fill="#7fff00" id="svg_4"/>
+   <path d="m483,600c0,34 58,34 58,0l0,-86c0,-34 -58,-34 -58,0l0,86z" fill="#7fff00" id="svg_5"/>
+   <circle cx="725" cy="526" fill="#7fff00" id="svg_6" r="90"/>
+   <circle cx="299" cy="526" fill="#7fff00" id="svg_7" r="90"/>
+  </g>
+  <g fill="#414042" id="svg_8" transform="translate(12.322 12.322)scale(.101)">
+   <circle cx="307" cy="532" id="svg_9" r="60"/>
+   <circle cx="717" cy="532" id="svg_10" r="60"/>
+  </g>
+  <text fill="#007f3f" font-family="Cursive" font-size="15" id="svg_11" letter-spacing="0" stroke="#212532" stroke-width="0" style="cursor: move;" text-anchor="middle" transform="matrix(9.80188 0 0 7.13795 -1181.34 -563.163)" x="127" xml:space="preserve" y="92.5">L</text>
+ </g>
+</svg>
