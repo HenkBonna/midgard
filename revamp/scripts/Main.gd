@@ -96,7 +96,7 @@ func build_environment() -> void:
 	environment.fog_light_color = Color(0.62, 0.79, 0.9)
 	environment.fog_density = 0.0015
 	environment.fog_depth_begin = 55.0
-	environment.fog_depth_end = 250.0
+	environment.fog_depth_end = 150.0
 	environment.fog_depth_curve = 1.2
 	environment.fog_sky_affect = 0.0
 	environment_node.environment = environment
