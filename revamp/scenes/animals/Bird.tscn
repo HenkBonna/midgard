@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_player"]
+[ext_resource type="PackedScene" path="res://assets/models/player/hawk.glb" id="2_hawk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bird"]
+radius = 0.55
+height = 1.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sensor"]
+radius = 1.1
+
+[node name="Bird" type="CharacterBody3D"]
+script = ExtResource("1_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bird")
+
+[node name="HawkImpact" type="Node3D" parent="."]
+
+[node name="HawkSpin" type="Node3D" parent="HawkImpact"]
+
+[node name="hawk" parent="HawkImpact/HawkSpin" instance=ExtResource("2_hawk")]
+rotation = Vector3(0, 3.141593, 0)
+scale = Vector3(2.4, 2.4, 2.4)
+
+[node name="ObstacleSensor" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObstacleSensor"]
+shape = SubResource("SphereShape3D_sensor")
