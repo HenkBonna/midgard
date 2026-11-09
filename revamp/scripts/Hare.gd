@@ -10,7 +10,7 @@ signal controls_unlocked(world_position: Vector3)
 @export var minimum_hop_speed: float = 7.0
 @export var maximum_hop_speed: float = 15.0
 @export var hop_charge_duration: float = 0.8
-@export var intro_hop_speed: float = 14.0
+@export var intro_hop_speed: float = 13.0
 
 const SIDE_LIMIT: float = 18.0
 
