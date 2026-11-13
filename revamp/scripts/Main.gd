@@ -1,6 +1,15 @@
 extends Node3D
 
 const TEST_START_Z: float = 0.0
+const HARE_TEST_START_Z: float = 750.0
+const DOG_MOUNT_Z: float = 890.0
+const DOG_FINISH_Z: float = 1410.0
+const DOG_FORWARD_SPEED: float = 12.0
+const STAGE_HAWK: int = 0
+const STAGE_HARE: int = 1
+const STAGE_DOG: int = 2
+
+@export var start_as_hare_for_testing: bool = false
 
 var collected_count: int = 0
 var total_collectibles: int = 0
@@ -20,47 +29,43 @@ var camera_pivot: Node3D
 var camera: Camera3D
 var finish_rabbit: Node3D
 var rabbit_touch_area: Area3D
+var dog_mount: Node3D
+var dog_transition_started: bool = false
 var transition_end_plane: MeshInstance3D
 var finish_approach_started: bool = false
+var stage_host: Node3D
+var stage_root: Node3D
+var stage_nodes: Dictionary = {}
+var active_stage_id: int = -1
 
 func _ready() -> void:
 	build_environment()
-	build_level()
-	build_trees()
+	create_ground()
+	stage_host = Node3D.new()
+	stage_host.name = "StageHost"
+	add_child(stage_host)
 	build_player()
-	build_collectibles()
-	_prepare_test_start()
-	build_goal()
-	build_transition_end_marker()
-	build_finish_rabbit()
-	build_hare_obstacles()
-	build_final_goal()
 	build_hud()
 	build_vignette_overlay()
+	if start_as_hare_for_testing:
+		total_collectibles = 13
+		_activate_stage(STAGE_HARE)
+		switch_animal(load("res://scenes/animals/Hare.tscn") as PackedScene)
+	else:
+		_activate_stage(STAGE_HAWK)
+	_prepare_test_start()
 	_update_hud()
 	build_start_card()
 	get_tree().paused = true
 
-func build_transition_end_marker() -> void:
-	transition_end_plane = MeshInstance3D.new()
-	transition_end_plane.name = "TransitionEndPlane"
-	var plane := PlaneMesh.new()
-	plane.size = Vector2(56.0, 24.0)
-	transition_end_plane.mesh = plane
-	transition_end_plane.position = Vector3(0.0, 12.0, 0.0)
-	transition_end_plane.rotation_degrees.x = 90.0
-	var material := StandardMaterial3D.new()
-	material.albedo_color = Color(1.0, 0.08, 0.06, 0.3)
-	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	transition_end_plane.material_override = material
-	transition_end_plane.visible = false
-	add_child(transition_end_plane)
-
 func _process(_delta: float) -> void:
 	if player == null:
 		return
+
+	if active_stage_id == STAGE_HAWK and player.global_position.z >= 640.0:
+		_load_stage(STAGE_HARE)
+	elif active_stage_id == STAGE_HARE and player.global_position.z >= 830.0:
+		_load_stage(STAGE_DOG)
 
 	if velocity_label != null:
 		var flight_velocity: Vector3 = player.call("get_flight_velocity")
@@ -75,6 +80,84 @@ func _input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	elif event.keycode == KEY_T:
 		_toggle_screen_effects()
+
+func _stage_scene_path(stage_id: int) -> String:
+	match stage_id:
+		STAGE_HAWK:
+			return "res://scenes/stages/HawkStage.tscn"
+		STAGE_HARE:
+			return "res://scenes/stages/HareStage.tscn"
+		_:
+			return "res://scenes/stages/DogStage.tscn"
+
+func _load_stage(stage_id: int) -> Node3D:
+	if stage_nodes.has(stage_id):
+		return stage_nodes[stage_id]
+
+	var stage_scene := load(_stage_scene_path(stage_id)) as PackedScene
+	var stage := stage_scene.instantiate() as Node3D
+	stage_host.add_child(stage)
+	stage_nodes[stage_id] = stage
+	match stage_id:
+		STAGE_HAWK:
+			goal = stage.get("finish_area")
+			total_collectibles = int(stage.get("total_collectibles"))
+			stage.connect("ring_picked_up", _on_collectible_picked_up)
+			stage.connect("finish_line_crossed", _on_goal_body_entered)
+		STAGE_HARE:
+			transition_end_plane = stage.get("transition_end_plane")
+			finish_rabbit = stage.get("finish_rabbit")
+			rabbit_touch_area = stage.get("rabbit_touch_area")
+			dog_mount = stage.get("dog_mount")
+			final_goal = stage.get("dog_mount_line")
+			stage.connect("rabbit_touched", _on_rabbit_touched)
+			stage.connect("dog_mount_line_crossed", _on_final_goal_body_entered)
+		STAGE_DOG:
+			final_goal = stage.get("finish_line")
+			stage.connect("finish_line_crossed", _on_dog_final_goal_body_entered)
+	return stage
+
+func _activate_stage(stage_id: int) -> void:
+	var previous_stage_id := active_stage_id
+	var next_stage := _load_stage(stage_id)
+	if previous_stage_id == stage_id:
+		stage_root = next_stage
+		return
+
+	if previous_stage_id >= 0 and stage_nodes.has(previous_stage_id):
+		stage_nodes[previous_stage_id].queue_free()
+		stage_nodes.erase(previous_stage_id)
+		_clear_stage_references(previous_stage_id)
+	active_stage_id = stage_id
+	stage_root = next_stage
+	_set_stage_references(stage_id, next_stage)
+
+func _set_stage_references(stage_id: int, stage: Node3D) -> void:
+	match stage_id:
+		STAGE_HAWK:
+			goal = stage.get("finish_area")
+			total_collectibles = int(stage.get("total_collectibles"))
+		STAGE_HARE:
+			transition_end_plane = stage.get("transition_end_plane")
+			finish_rabbit = stage.get("finish_rabbit")
+			rabbit_touch_area = stage.get("rabbit_touch_area")
+			dog_mount = stage.get("dog_mount")
+			final_goal = stage.get("dog_mount_line")
+		STAGE_DOG:
+			final_goal = stage.get("finish_line")
+
+func _clear_stage_references(stage_id: int) -> void:
+	match stage_id:
+		STAGE_HAWK:
+			goal = null
+		STAGE_HARE:
+			transition_end_plane = null
+			finish_rabbit = null
+			rabbit_touch_area = null
+			final_goal = null
+			dog_mount = null
+		STAGE_DOG:
+			final_goal = null
 
 func build_environment() -> void:
 	var environment_node := WorldEnvironment.new()
@@ -94,11 +177,11 @@ func build_environment() -> void:
 	environment.ambient_light_energy = 1.2
 	environment.fog_enabled = true
 	environment.fog_light_color = Color(0.62, 0.79, 0.9)
-	environment.fog_density = 0.0015
-	environment.fog_depth_begin = 55.0
-	environment.fog_depth_end = 150.0
-	environment.fog_depth_curve = 1.2
-	environment.fog_sky_affect = 0.0
+	environment.fog_density = 0.02
+	environment.fog_depth_begin = 75.0
+	environment.fog_depth_end = 140.0
+	environment.fog_depth_curve = 3.2
+	environment.fog_sky_affect = 1.0
 	environment_node.environment = environment
 	add_child(environment_node)
 
@@ -108,31 +191,6 @@ func build_environment() -> void:
 	sun.light_energy = 1.3
 	sun.shadow_enabled = true
 	add_child(sun)
-
-func create_box_body(name: String, position: Vector3, size: Vector3, color: Color, roughness: float = 0.85) -> void:
-	var body := StaticBody3D.new()
-	body.name = name
-	body.position = position
-	body.add_to_group("obstacle")
-
-	var collision := CollisionShape3D.new()
-	var rounded_shape := CapsuleShape3D.new()
-	rounded_shape.radius = minf(size.x, size.z) * 0.48
-	rounded_shape.height = maxf(size.y, rounded_shape.radius * 2.0)
-	collision.shape = rounded_shape
-	body.add_child(collision)
-
-	var mesh := MeshInstance3D.new()
-	var box_mesh := BoxMesh.new()
-	box_mesh.size = size
-	mesh.mesh = box_mesh
-	var material := StandardMaterial3D.new()
-	material.albedo_color = color
-	material.roughness = roughness
-	mesh.material_override = material
-	body.add_child(mesh)
-
-	add_child(body)
 
 func create_ground() -> void:
 	var ground := MeshInstance3D.new()
@@ -155,93 +213,6 @@ func create_ground() -> void:
 	ground_shape.shape = ground_box
 	ground_body.add_child(ground_shape)
 	add_child(ground_body)
-
-func build_level() -> void:
-	create_ground()
-
-	var lane_x: Array[float] = [-18.0, -9.0, 0.0, 9.0, 18.0]
-	for index in range(96):
-		var tower_z := 8.0 + index * 7.5
-		var tower_x: float = lane_x[index % lane_x.size()]
-		var tower_height: float = 8.0 + float(index % 9) * 2.2
-		var tower_color := Color(0.63 + randf() * 0.18, 0.70 + randf() * 0.18, 0.78 + randf() * 0.18)
-		create_box_body("Tower_%02d" % (index + 1), Vector3(tower_x, tower_height * 0.5 - 0.5, tower_z), Vector3(2.8, tower_height, 2.8), tower_color, 0.8)
-
-	var rooftop_details := [
-		Vector3(-12.0, 7.5, 16.0),
-		Vector3(-6.0, 9.0, 30.0),
-		Vector3(0.0, 8.5, 46.0),
-		Vector3(6.0, 10.0, 62.0),
-		Vector3(12.0, 8.5, 80.0),
-		Vector3(-12.0, 9.0, 96.0),
-		Vector3(-6.0, 10.5, 116.0),
-		Vector3(0.0, 11.0, 136.0),
-		Vector3(6.0, 8.8, 158.0),
-		Vector3(12.0, 9.2, 180.0),
-		Vector3(-12.0, 10.8, 198.0),
-		Vector3(-6.0, 9.6, 214.0),
-		Vector3(0.0, 10.8, 228.0),
-		Vector3(6.0, 9.5, 246.0),
-		Vector3(12.0, 11.0, 264.0)
-	]
-	for index in range(rooftop_details.size()):
-		var detail_color := Color(0.68 + randf() * 0.12, 0.73 + randf() * 0.12, 0.82 + randf() * 0.12)
-		create_box_body("Rooftop_%02d" % (index + 1), rooftop_details[index], Vector3(2.2, 2.0, 2.2), detail_color, 0.7)
-
-func build_trees() -> void:
-	var tree_scenes: Array[PackedScene] = [
-		load("res://assets/models/foliage/tree1.glb") as PackedScene,
-		load("res://assets/models/foliage/pine_tree1.glb") as PackedScene
-	]
-	var leafy_positions: Array[Transform3D] = []
-	var pine_positions: Array[Transform3D] = []
-	var tree_count := 840
-	for index in range(tree_count):
-		var side := -1.0 if index % 2 == 0 else 1.0
-		var progress: float = float(index) / float(tree_count - 1)
-		var position := Vector3(side * randf_range(31.0, 53.0), 0.0, 20.0 + progress * 700.0)
-		var basis := Basis(Vector3.UP, randf_range(0.0, TAU)).scaled(Vector3.ONE * randf_range(0.85, 1.25))
-		var instance_transform := Transform3D(basis, position)
-		if index % 4 < 2:
-			leafy_positions.append(instance_transform)
-		else:
-			pine_positions.append(instance_transform)
-
-	_add_tree_multimeshes(tree_scenes[0], leafy_positions)
-	_add_tree_multimeshes(tree_scenes[1], pine_positions)
-
-func _add_tree_multimeshes(scene: PackedScene, placements: Array[Transform3D]) -> void:
-	var source_root := scene.instantiate()
-	var mesh_parts: Array[Dictionary] = []
-	_collect_tree_meshes(source_root, Transform3D.IDENTITY, mesh_parts)
-	source_root.free()
-
-	for part in mesh_parts:
-		var mesh: Mesh = part["mesh"]
-		var local_transform: Transform3D = part["transform"]
-		var multimesh := MultiMesh.new()
-		multimesh.transform_format = MultiMesh.TRANSFORM_3D
-		multimesh.mesh = mesh
-		multimesh.instance_count = placements.size()
-		for index in range(placements.size()):
-			multimesh.set_instance_transform(index, placements[index] * local_transform)
-
-		var instance := MultiMeshInstance3D.new()
-		instance.multimesh = multimesh
-		instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-		add_child(instance)
-
-func _collect_tree_meshes(node: Node, parent_transform: Transform3D, result: Array[Dictionary]) -> void:
-	var node_transform := parent_transform
-	if node is Node3D:
-		node_transform *= (node as Node3D).transform
-
-	if node is MeshInstance3D and (node as MeshInstance3D).mesh != null:
-		var mesh_instance := node as MeshInstance3D
-		result.append({"mesh": mesh_instance.mesh, "transform": node_transform})
-
-	for child in node.get_children():
-		_collect_tree_meshes(child, node_transform, result)
 
 func build_player() -> void:
 	camera_pivot = Node3D.new()
@@ -267,11 +238,13 @@ func build_player() -> void:
 	player.call("configure_camera_rig", camera_pivot, camera)
 	add_child(player)
 
-func switch_animal(animal_scene: PackedScene) -> void:
+func switch_animal(animal_scene: PackedScene, state_override: Dictionary = {}) -> void:
 	if player == null or animal_scene == null or level_finished:
 		return
 
-	var transition_state: Dictionary = player.call("capture_transition_state")
+	var transition_state: Dictionary = state_override
+	if transition_state.is_empty():
+		transition_state = player.call("capture_transition_state")
 	var next_animal := animal_scene.instantiate() as CharacterBody3D
 	if next_animal == null:
 		return
@@ -286,147 +259,17 @@ func switch_animal(animal_scene: PackedScene) -> void:
 	player = next_animal
 	previous_animal.queue_free()
 
-func build_collectibles() -> void:
-	var positions := [
-		Vector3(-4.0, 6.5, 30.0),
-		Vector3(4.0, 8.0, 54.0),
-		Vector3(4.0, 7.5, 82.0),
-		Vector3(-4.0, 10.0, 108.0),
-		Vector3(-4.0, 8.0, 176.0),
-		Vector3(4.0, 9.5, 244.0),
-		Vector3(4.0, 7.5, 312.0),
-		Vector3(-4.0, 10.0, 380.0),
-		Vector3(4.0, 8.5, 430.0),
-		Vector3(-12.0, 12.0, 500.0),
-		Vector3(4.0, 15.0, 560.0),
-		Vector3(12.0, 10.0, 620.0),
-		Vector3(-4.0, 18.0, 680.0)
-	]
-
-	for index in range(positions.size()):
-		var collectible := Area3D.new()
-		collectible.name = "Ring_%02d" % (index + 1)
-		collectible.position = positions[index]
-		collectible.add_to_group("collectible")
-		collectible.set_script(load("res://scripts/Collectible.gd"))
-		collectible.picked_up.connect(_on_collectible_picked_up)
-		add_child(collectible)
-
-	total_collectibles = positions.size()
-
 func _prepare_test_start() -> void:
 	if player == null:
 		return
-	player.global_position.z = TEST_START_Z
-	collected_count = maxi(total_collectibles - 1, 0)
+	if player.get_script().resource_path == "res://scripts/Hare.gd":
+		player.global_position = Vector3(0.0, 0.0, HARE_TEST_START_Z)
+		player.velocity = Vector3(0.0, 0.0, float(player.get("forward_speed")))
+		collected_count = total_collectibles
+	else:
+		player.global_position.z = TEST_START_Z
+		collected_count = maxi(total_collectibles - 1, 0)
 	camera_pivot.global_position = player.global_position + Vector3(0.0, 2.0, 0.0)
-
-func build_goal() -> void:
-	goal = Area3D.new()
-	goal.name = "Goal"
-	goal.position = Vector3(0, 12.0, 725)
-	goal.monitoring = true
-	goal.monitorable = true
-	goal.body_entered.connect(_on_goal_body_entered)
-
-	var collision := CollisionShape3D.new()
-	var box_shape := BoxShape3D.new()
-	box_shape.size = Vector3(56.0, 24.0, 1.0)
-	collision.shape = box_shape
-	goal.add_child(collision)
-
-	var mesh := MeshInstance3D.new()
-	var finish_plane := PlaneMesh.new()
-	finish_plane.size = Vector2(56.0, 24.0)
-	mesh.mesh = finish_plane
-	mesh.rotation_degrees.x = 90.0
-	var material := StandardMaterial3D.new()
-	material.albedo_color = Color(0.35, 0.72, 0.9, 0.22)
-	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	mesh.material_override = material
-	goal.add_child(mesh)
-
-	add_child(goal)
-
-func build_final_goal() -> void:
-	final_goal = Area3D.new()
-	final_goal.name = "FinalGoal"
-	final_goal.position = Vector3(0.0, 12.0, 870.0)
-	final_goal.body_entered.connect(_on_final_goal_body_entered)
-	var collision := CollisionShape3D.new()
-	var box_shape := BoxShape3D.new()
-	box_shape.size = Vector3(56.0, 24.0, 1.0)
-	collision.shape = box_shape
-	final_goal.add_child(collision)
-
-	var mesh := MeshInstance3D.new()
-	var plane := PlaneMesh.new()
-	plane.size = Vector2(56.0, 24.0)
-	mesh.mesh = plane
-	mesh.rotation_degrees.x = 90.0
-	var material := StandardMaterial3D.new()
-	material.albedo_color = Color(0.35, 0.72, 0.9, 0.22)
-	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	mesh.material_override = material
-	final_goal.add_child(mesh)
-	add_child(final_goal)
-
-func build_finish_rabbit() -> void:
-	var rabbit_scene := load("res://assets/models/player/rabbit.glb") as PackedScene
-	finish_rabbit = rabbit_scene.instantiate() as Node3D
-	finish_rabbit.name = "FinishRabbit"
-	finish_rabbit.position = Vector3(0.0, 0.0, 745.0)
-	finish_rabbit.scale = Vector3.ONE * 1.5
-	add_child(finish_rabbit)
-
-	rabbit_touch_area = Area3D.new()
-	rabbit_touch_area.name = "RabbitTouchArea"
-	rabbit_touch_area.position = Vector3(0.0, 0.7, 745.0)
-	var touch_shape := CollisionShape3D.new()
-	var touch_sphere := SphereShape3D.new()
-	touch_sphere.radius = 1.4
-	touch_shape.shape = touch_sphere
-	rabbit_touch_area.add_child(touch_shape)
-	rabbit_touch_area.body_entered.connect(_on_rabbit_touched)
-	add_child(rabbit_touch_area)
-
-func build_hare_obstacles() -> void:
-	var obstacles := [
-		{"position": Vector3(0.0, 0.55, 760.0), "size": Vector3(3.0, 1.1, 2.5)},
-		{"position": Vector3(4.0, 0.9, 775.0), "size": Vector3(3.2, 1.8, 3.0)},
-		{"position": Vector3(0.0, 1.3, 790.0), "size": Vector3(5.0, 2.6, 4.5)},
-		{"position": Vector3(-4.0, 0.7, 808.0), "size": Vector3(3.5, 1.4, 3.0)},
-		{"position": Vector3(2.5, 1.1, 825.0), "size": Vector3(4.2, 2.2, 3.5)},
-		{"position": Vector3(-2.0, 0.55, 844.0), "size": Vector3(3.0, 1.1, 2.5)}
-	]
-	for index in range(obstacles.size()):
-		var obstacle: Dictionary = obstacles[index]
-		var size: Vector3 = obstacle["size"]
-		var body := StaticBody3D.new()
-		body.name = "HareBox_%02d" % (index + 1)
-		body.position = obstacle["position"]
-		body.add_to_group("hare_obstacle")
-
-		var collision := CollisionShape3D.new()
-		var box_shape := BoxShape3D.new()
-		box_shape.size = size
-		collision.shape = box_shape
-		body.add_child(collision)
-
-		var mesh := MeshInstance3D.new()
-		var box_mesh := BoxMesh.new()
-		box_mesh.size = size
-		mesh.mesh = box_mesh
-		var material := StandardMaterial3D.new()
-		material.albedo_color = Color(0.42, 0.55, 0.64) if index % 2 == 0 else Color(0.57, 0.45, 0.34)
-		material.roughness = 0.85
-		mesh.material_override = material
-		body.add_child(mesh)
-		add_child(body)
 
 func build_hud() -> void:
 	var hud := CanvasLayer.new()
@@ -522,7 +365,7 @@ func build_start_card() -> void:
 	start_card.add_child(center)
 
 	var start_button := Button.new()
-	start_button.text = "Press Space to soar"
+	start_button.text = "Press Space to start"
 	start_button.custom_minimum_size = Vector2(420, 72)
 	start_button.add_theme_font_size_override("font_size", 30)
 	start_button.focus_mode = Control.FOCUS_ALL
@@ -596,15 +439,38 @@ func _restart_run() -> void:
 	collected_count = 0
 	level_finished = false
 	finish_approach_started = false
-	transition_end_plane.hide()
+	dog_transition_started = false
+	if transition_end_plane != null:
+		transition_end_plane.hide()
+	if finish_rabbit != null:
+		finish_rabbit.queue_free()
+		finish_rabbit = null
+	if dog_mount != null:
+		dog_mount.queue_free()
+		dog_mount = null
 	if rabbit_touch_area != null:
 		rabbit_touch_area.queue_free()
 		rabbit_touch_area = null
-	if player.get_script().resource_path != "res://scripts/Player.gd":
-		switch_animal(load("res://scenes/animals/Bird.tscn") as PackedScene)
-	player.call("reset_run")
-	build_collectibles()
-	build_finish_rabbit()
+	var start_scene_path := "res://scenes/animals/Hare.tscn" if start_as_hare_for_testing else "res://scenes/animals/Bird.tscn"
+	switch_animal(load(start_scene_path) as PackedScene)
+	for stage in stage_nodes.values():
+		stage.queue_free()
+	stage_nodes.clear()
+	active_stage_id = -1
+	stage_root = null
+	goal = null
+	final_goal = null
+	finish_rabbit = null
+	rabbit_touch_area = null
+	dog_mount = null
+	transition_end_plane = null
+	if start_as_hare_for_testing:
+		total_collectibles = 13
+	else:
+		total_collectibles = 0
+	_activate_stage(STAGE_HARE if start_as_hare_for_testing else STAGE_HAWK)
+	if player.has_method("reset_run"):
+		player.call("reset_run")
 	_prepare_test_start()
 	_update_hud()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -631,6 +497,30 @@ func _on_goal_body_entered(body: Node) -> void:
 	player.call("begin_finish_approach", finish_rabbit.global_position + Vector3(0.0, 1.0, 0.0))
 
 func _on_final_goal_body_entered(body: Node) -> void:
+	if body != player or dog_transition_started or dog_mount == null or not player.has_method("begin_dog_mount"):
+		return
+	dog_transition_started = true
+	player.connect("dog_mounted", _on_hare_mounted_dog, CONNECT_ONE_SHOT)
+	status_label.text = "The rabbit leaps onto the dog..."
+	player.call("begin_dog_mount", dog_mount.global_position + Vector3(0.0, 1.55, 0.0))
+
+func _on_hare_mounted_dog(_position: Vector3) -> void:
+	if dog_mount == null:
+		return
+	var dog_position: Vector3 = dog_mount.global_position
+	dog_mount.queue_free()
+	dog_mount = null
+	var dog_state := {
+		"position": dog_position,
+		"lateral_velocity": 0.0,
+		"vertical_velocity": 0.0,
+		"dog_forward_speed": DOG_FORWARD_SPEED
+	}
+	switch_animal(load("res://scenes/animals/Dog.tscn") as PackedScene, dog_state)
+	_activate_stage(STAGE_DOG)
+	status_label.text = "Dog: weave around the pines. Space to jump."
+
+func _on_dog_final_goal_body_entered(body: Node) -> void:
 	if body == player:
 		_show_finish_card()
 
@@ -640,6 +530,7 @@ func _on_rabbit_touched(body: Node) -> void:
 	rabbit_touch_area.set_deferred("monitoring", false)
 	transition_end_plane.global_position = Vector3(0.0, 12.0, player.global_position.z + 10.0)
 	switch_animal(load("res://scenes/animals/Hare.tscn") as PackedScene)
+	_activate_stage(STAGE_HARE)
 	finish_rabbit.queue_free()
 	finish_rabbit = null
 	rabbit_touch_area.queue_free()
